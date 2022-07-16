@@ -35,7 +35,7 @@ def signup_view(request,*args,**kwargs):
             user = User.objects.create_user(username=form_data.get('Username'),email=form_data.get('email'),password=form_data.get('password'),first_name=form_data.get('name').split()[0])
             print(form_data.get('Username'))
 
-            return redirect('home')
+            return redirect('home_view')
         else:
             print(form.errors.as_json(escape_html=False))
             print("not valid")
