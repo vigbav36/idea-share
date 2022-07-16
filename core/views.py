@@ -4,6 +4,7 @@ from idea.models import Idea
 from users.forms import signup_form,login_form
 from users.models import UserAccount
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def home_view(request,*args,**kwargs):
@@ -34,7 +35,7 @@ def signup_view(request,*args,**kwargs):
             UserAccount.objects.create(**form_data)
             user = User.objects.create_user(username=form_data.get('Username'),email=form_data.get('email'),password=form_data.get('password'),first_name=form_data.get('name').split()[0])
             print(form_data.get('Username'))
-
+            login(request, user)
             return redirect('home_view')
         else:
             print(form.errors.as_json(escape_html=False))
