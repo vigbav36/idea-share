@@ -7,8 +7,10 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def home_view(request,*args,**kwargs):
-    ideas = Idea.objects.all().exclude(created_by=request.user)
-    print(ideas)
+    ideas={}
+    if request.user.is_authenticated:
+        ideas = Idea.objects.all().exclude(created_by=request.user)
+    #print(ideas)
     return render(request,"home.html",{'Idea':ideas})
 
 def login_view(request,*args,**kwargs):
