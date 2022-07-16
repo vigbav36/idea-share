@@ -1,29 +1,13 @@
-<html>
-    <head>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'signup.css' %}">
-    </head>
-    <body>
-        <div class="basicnav">
-            <a class="nav_opt" href="/login.html">Home</a>
-            <a class="nav_opt" href="#about">About</a>
-        </div>
-        <div class="main">
-            <div class="login_box">
-                <h1>
-                    SIGNUP
-                </h1>
-                <form method="POST">{% csrf_token %}
-                    {{ form.as_p }}
-                    <input class="sub_button" type="submit" value="Signup">
-                </form>
-                <h1>
-                    {% for err in form_errors %}
-                        {{ err }}
-                    {% endfor %}
-                </h1>
-            </div>
-        </div>
-    </body>
-</html>
+<h1>
+    SIGNUP PAGE
+</h1>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="signup">
+</form>
 
+<h1>
+    {% for err in form_errors %}
+        {{ err }}
+    {% endfor %}
+</h1>
