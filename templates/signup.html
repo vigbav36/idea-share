@@ -1,13 +1,21 @@
-<h1>
-    SIGNUP PAGE
-</h1>
-<form method="POST">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="signup">
-</form>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'signup.css' %}">
+    </head>
+    <h1>
+        SIGNUP PAGE
+    </h1>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="signup">
+    </form>
+    
+    <h1>
+        {% for err in form_errors %}
+            {{ err }}
+        {% endfor %}
+    </h1>
+    
+</html>
 
-<h1>
-    {% for err in form_errors %}
-        {{ err }}
-    {% endfor %}
-</h1>
