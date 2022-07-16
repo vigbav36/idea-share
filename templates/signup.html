@@ -27,3 +27,8 @@
     </body>
 </html>
 
+<h1>
+    {% for err in form_errors %}
+        {{ err }}
+    {% endfor %}
+</h1>
