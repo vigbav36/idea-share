@@ -60,11 +60,3 @@ def collab_idea(request,idea_id):
         return redirect(home_view)
     return render(request,'colab_idea.html',{'form':form})     
 
-    """  if form.is_valid():
-            form_data=form.cleaned_data
-            Idea_applicants.objects.create(
-                user=request.user,
-                job_id=idea_id,
-                description=form_data.get('description'),
-                skills=form_data.get('skills')
-            ) """
