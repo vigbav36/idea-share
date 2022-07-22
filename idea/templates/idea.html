@@ -1,10 +1,15 @@
 <html>
     <p>
-       {{ idea.title }}
-       {{ idea.short_description }}
-       {{ idea.long_description }}
-       {{ created_user.name }}
-       {{ idea.created_at }}
-       {{ idea.updated_at }}
+    {% if idea.created_by == request.user  %}
+        {{ idea.title }}
+    {% else %}
+        {{ idea.title }}
+        {{ idea.short_description }}
+        {{ idea.long_description }}
+        {{ created_by.name }}
+        {{ idea.created_at }}
+        {{ idea.updated_at }}
+        <a href="#">COLLAB</a>
+    {% endif %}
     </p>
 </html>

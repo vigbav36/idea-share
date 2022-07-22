@@ -6,4 +6,4 @@ class add_idea_form(forms.Form):
     short_descirption = forms.CharField()
     long_description = forms.CharField()
 
-    
+#class apply_idea_form(forms.Form):

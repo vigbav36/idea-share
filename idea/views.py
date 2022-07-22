@@ -9,12 +9,9 @@ from idea.forms import add_idea_form
 
 def idea_view(request,idea_id):
     idea = Idea.objects.filter(pk=idea_id)
-    created_user = UserAccount.objects.filter(Username=idea[0].created_by)
     context={
         'idea':idea[0],
-        'created_user':created_user[0],
     }
-    print(context)
     return render(request,"idea.html",context)
 
 def add_idea_view(request,*args,**kwargs):
@@ -32,3 +29,9 @@ def add_idea_view(request,*args,**kwargs):
             )
             return redirect(home_view)  
     return render(request,'add_idea.html',context)
+
+""" def collab_idea(request,*args,**kwargs): """
+
+def self_idea_view(request,*args,**kwargs):
+    ideas = Idea.objects.filter(created_by=request.user)
+    return render(request,'my_ideas.html',{'Idea':ideas})

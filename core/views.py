@@ -32,8 +32,21 @@ def signup_view(request,*args,**kwargs):
         form=signup_form(request.POST or None)
         if(form.is_valid()):
             form_data = form.cleaned_data
-            UserAccount.objects.create(**form_data)
-            user = User.objects.create_user(username=form_data.get('Username'),email=form_data.get('email'),password=form_data.get('password'),first_name=form_data.get('name').split()[0])
+            user = User.objects.create_user(
+                username=form_data.get('Username'),
+                email=form_data.get('email'),
+                password=form_data.get('password'),
+                first_name=form_data.get('name').split()[0]
+                )
+            print(user.id)
+            UserAccount.objects.create(
+                Username=form_data.get('Username'),
+                userId=user,
+                email=form_data.get('email'),
+                password=form_data.get('password'),
+                name=form_data.get('name'),
+                branch=form_data.get('branch'),
+            )
             print(form_data.get('Username'))
             login(request, user)
             return redirect('home_view')

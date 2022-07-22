@@ -1,0 +1,8 @@
+<div>
+    {% for idea in Idea %}
+        <div>
+            <h3>{{ idea.title }}</h3>
+            <a href = "{% url 'idea_view' idea.id %}">view</a>
+        </div>
+    {% endfor %}
+</div>
