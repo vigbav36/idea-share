@@ -11,7 +11,7 @@
         <p>{{ request.user }}</p>
         <a href="{% url 'my_ideas' %}">YOUR IDEAS</a>
         <a href="{% url 'add_idea' %}">ADD JOB</a>
-
+        <a href="{% url 'profile' request.user %}">PROFILE</a>
         <div>
             {% for idea in Idea %}
                 <div>

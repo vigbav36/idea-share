@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import include, path
 from core.views import home_view,login_view,signup_view
 from idea.views import idea_view, add_idea_view, self_idea_view, collab_idea
+from users.views import user_profile_view , applicant_view
+from django.contrib.auth.models import User
 
 urlpatterns = [
     path('',home_view , name='home_view'),
@@ -27,5 +29,8 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")), 
     path('addNewIdea/',add_idea_view,name='add_idea'),
     path('myJobs/',self_idea_view,name='my_ideas'),
-    path('collab<int:idea_id>',collab_idea,name='collab')
+    path('collab<int:idea_id>',collab_idea,name='collab'),
+    path('myProfile/<str:user_id>',user_profile_view,name='profile'),
+    path('idea<int:idea_id>/applicant/<str:user_id>',applicant_view,name='applicant'),
+
 ]
