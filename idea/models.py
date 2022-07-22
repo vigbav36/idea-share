@@ -17,5 +17,5 @@ class Idea(models.Model):
 class Idea_applicants(models.Model):
     user = models.ForeignKey(User,related_name='ideas_user',on_delete=models.CASCADE)
     job_id = models.ForeignKey(Idea,related_name='ideas_id',on_delete=models.CASCADE)
-    #description = models.TextField(blank=False)
-    #skills = models.TextField()
+    description = models.TextField(blank=False)
+    skills = models.TextField(blank=False)

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from core.views import home_view,login_view,signup_view
-from idea.views import idea_view, add_idea_view, self_idea_view
+from idea.views import idea_view, add_idea_view, self_idea_view, collab_idea
 
 urlpatterns = [
     path('',home_view , name='home_view'),
@@ -27,4 +27,5 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")), 
     path('addNewIdea/',add_idea_view,name='add_idea'),
     path('myJobs/',self_idea_view,name='my_ideas'),
+    path('collab<int:idea_id>',collab_idea,name='collab')
 ]

@@ -6,4 +6,7 @@ class add_idea_form(forms.Form):
     short_descirption = forms.CharField()
     long_description = forms.CharField()
 
-#class apply_idea_form(forms.Form):
+class collab_idea_form(forms.Form):
+    skills = forms.CharField(label='skills',widget=forms.Textarea)
+    description = forms.CharField(label='description',widget=forms.Textarea)
+
