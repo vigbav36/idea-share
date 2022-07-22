@@ -5,8 +5,8 @@
         <h5>Users Applied : </h5>
         {% for user in applied_users %}
                 <div>
-                    <h3>{{ user.name }}</h3>
-                    <a href = "#">view</a>
+                    <p>{{ user.name }}</p>
+                    <a href = "{% url 'applicant' idea.id user.userId %}">view</a>
                 </div>
         {% endfor %}
     {% else %}
