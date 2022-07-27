@@ -1,26 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+    {% if user.is_authenticated %}
     <head>
-        {% load static %}
         <link rel="stylesheet" href="{% static 'mainPg.css' %}">
-        
     </head>
     <body>
-    {% if user.is_authenticated %}
-        <a href="accounts/logout">LOGOUT</a>
+    <nav class="basicnav">
+        <a href="{% url 'home_view'  %}">Home</a>
+        <a href="#about">About</a>
+        <a class="dropdown" href="javascript:void(0)">Profile</a>
+        <div class="dropdown-content">
+            <a href="{% url 'profile' request.user %}">View</a>
+            <a href="accounts/logout">Logout</a>
+        </div>
+    </nav>
+
         <p>{{ request.user }}</p>
-        <a href="{% url 'my_ideas' %}">YOUR IDEAS</a>
-        <a href="{% url 'add_idea' %}">ADD IDEA</a>
-        <a href="{% url 'profile' request.user %}">PROFILE</a>
-        <div>
+
+    <div class="main">
+        <div class="user_opts">
+            <a href="{% url 'my_ideas' %}">YOUR IDEAS</a>
+            <a href="{% url 'add_idea' %}">ADD JOB</a>
+        </div>
+        <div class="ideas">
             {% for idea in Idea %}
-                <div>
+                <div class="item">
                     <h3>{{ idea.title }}</h3>
                     <a href = "{% url 'idea_view' idea.id %}">view</a>
                 </div>
             {% endfor %}
         </div>
+    </div>
     {% else %}
+        <head>
+            <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+        </head>
         <a href="accounts/login">LOGIN</a>
         <a href="/signup">SIGNUP</a>
     {% endif %}

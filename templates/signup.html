@@ -1,15 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        {% load static %}
         <link rel="stylesheet" href="{% static 'signup.css' %}">
-        
     </head>
     <body>
-        <div class="basicnav">
-            <a class="nav_opt" href="{% url 'home_view'  %}">Home</a>
-            <a class="nav_opt" href="#about">About</a>
-        </div>
+        <nav class="basicnav">
+            <a href="{% url 'home_view'  %}">Home</a>
+            <a href="#about">About</a>
+        </nav>
         <div class="main">
             <div class="login_box">
                 <h1>

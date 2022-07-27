@@ -3,6 +3,9 @@
     font-weight: 300;
     box-sizing: border-box;
 }
+label{
+    color:red;
+}
 body{
     background-color: rgb(46, 149, 144);
     overflow:hidden; 
@@ -82,21 +85,31 @@ input:hover
     padding-top: 30px;
 }
 .basicnav {
-    margin: 0;
+    
     background-color:  rgb(23, 84, 81 );
+    height: fit-content;
     width: 100%;
-    overflow: hidden;
+    margin:0;
+    overflow: auto;
+   
   }
-  
-  .basicnav a {
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.basicnav a {
     float: left;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 24px;
-  }
-  
-  .basicnav a:hover {
+    font-size: 14px;
+}
+.basicnav a:last-child {
+    float:right;
+}
+.basicnav a:hover {
     background-color: rgb(31, 114, 110);
   }
