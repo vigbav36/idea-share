@@ -7,9 +7,9 @@
     </head>
     <body>
     <nav class="basicnav">
-        <a href="{% url 'home_view'  %}">Home</a>
-        <a href="#about">About</a>
-        <a class="dropdown" href="javascript:void(0)">Profile</a>
+        <a class="link" href="{% url 'home_view'  %}">Home</a>
+        <a class="link" href="#about">About</a>
+        <a class="link dropdown" href="#">Profile</a>
         <div class="dropdown-content">
             <a href="{% url 'profile' request.user %}">View</a>
             <a href="accounts/logout">Logout</a>

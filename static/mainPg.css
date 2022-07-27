@@ -66,6 +66,7 @@ a {
 .item a:hover{
     color: black;
 }
+
 .basicnav {
     
     background-color:  rgb(23, 84, 81 );
@@ -76,10 +77,14 @@ a {
    
   }
 nav {
-	position: fixed;
+	
+    position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
+}
+.basicnav link:hover {
+    background-color: rgb(31, 114, 110);
 }
 .basicnav .dropdown {
     float:right;
@@ -100,20 +105,19 @@ nav {
     display: block;
     text-align: left;
 }
+
 .basicnav .dropdown:hover .dropdown-content {
     display: block;
 }  
 .basicnav .dropdown-content a:hover {background-color: #f1f1f1;}
-.basicnav a {
+
+.basicnav link {
     float: left;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 14px;
-}
-.basicnav a:hover {
-    background-color: rgb(31, 114, 110);
 }
 
   
