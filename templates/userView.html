@@ -1,3 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
-    <p>{{ name }}</p>
+    <head>
+        <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+    </head>
+    <body>
+        <nav class="basicnav">
+            <a class="link" href="{% url 'home_view'  %}">Home</a>
+        </nav>
+        <p>{{ name }}</p>
+    </body>
 </html>

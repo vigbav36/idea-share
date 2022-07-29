@@ -59,14 +59,13 @@
             <div class="view">
                 {% if idea.created_by == request.user  %}
                 <h1>{{ idea.title }}</h1>
-                <p>Users Applied : 
+                <h5>Users Applied : </h5>
                 {% for user in applied_users %}
-                        <div>
-                            <h3>{{ user.name }}</h3>
-                            <a href = "{% url 'applicant' idea.id user.userId %}">view</a>
-                        </div>
+                            <p>
+                            {{ user.name }}
+                            <a href = "{% url 'applicant' idea.id user.userId %}">View</a>
+                            </p>
                 {% endfor %}
-                </p>
             {% else %}
                 <h1>{{ idea.title }}</h1>
                 <h5 style="align-self: flex-end;padding: 0px;">ID - {{ idea.id }}</h5>
