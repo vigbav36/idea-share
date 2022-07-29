@@ -1,8 +1,27 @@
-<div>
-    {% for idea in Idea %}
-        <div>
-            <h3>{{ idea.title }}</h3>
-            <a href = "{% url 'idea_view' idea.id %}">view</a>
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+    </head>
+    <body>
+        <nav class="basicnav">
+            <a class="link" href="{% url 'home_view'  %}">Back</a>
+        </nav>
+
+
+        <div class="main">
+            <h1>
+                MY IDEAS
+            </h1>
+            <div class="ideas">
+                {% for idea in Idea %}
+                    <div class="item">
+                        <h3>{{ idea.title }}</h3>
+                        <a href = "{% url 'idea_view' idea.id %}">view</a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
-</div>
+    </body>
+</html>
