@@ -1,6 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
-    <form method="POST">{% csrf_token %}
-        {{ form.as_p }}
-        <input class="sub_button" type="submit" value="collab">
-    </form>
+    <head>
+        <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+    </head>
+    <body>
+    <nav class="basicnav">
+        <a class="link" href="{% url 'home_view'  %}">Home</a>
+    </nav>
+        <form method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <input class="sub_button" type="submit" value="Collaborate">
+        </form>
+    </body>
 </html>

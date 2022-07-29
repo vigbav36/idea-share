@@ -1,3 +1,62 @@
-h1{
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(31, 114, 110);
+}
+form {
+
+    background-color: white;
+    padding: 30px 30px 30px 30px;
+    height: auto;
+    width: 30%;
+    row-gap: 10%;
+    border-radius: 15px;
+    box-shadow: 12px 10px 12px rgba(16, 15, 15, 0.42);
+    display: flex;
+    flex-direction: column;
+    
+}
+h1 {
+    color: white;
+}
+label {
+    
+    color: rgb(23, 84, 81 );
+    font-weight: 200;
+}
+textarea, #id_username, #id_password, #id_short_descirption, #id_long_description, #id_title{
+
+    height:30px;
+    width: 100%;
+    background-color: rgb(195, 233, 231);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 2px 1px 2px rgba(42, 39, 39, 0.32);
+}
+textarea,#id_long_description {
+
+    height: 60px;
+}
+.ip_button, .add_button, .sub_button {
+
+    background-color: rgb(23, 84, 81 );
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 3% 10% 3% 10%;
+    margin-top:10% ;
+    margin-bottom:5% ;
+    border-radius: 5px;
+    border-style:none;
     text-align: center;
+    width:fit-content;
+    align-self: center;
+    box-shadow: 2px 1px 2px rgba(42, 39, 39, 0.32);
 }

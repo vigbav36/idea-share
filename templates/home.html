@@ -32,12 +32,35 @@
             {% endfor %}
         </div>
     </div>
+    </body>
     {% else %}
         <head>
-            <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+            <style>
+                body {
+                    background-color: rgb(31, 114, 110);
+                    display: flex;
+                    flex-direction: row;
+                    row-gap: 20px;
+                    align-items: center;
+                    height: 100vh;
+                    justify-content: center;
+
+                }
+                a{
+                    text-decoration: none;
+                    background-color: rgb(9, 61, 58);
+                    padding: 1em 1.5em;
+                    color: white;
+                    border-radius: 15px;
+                }
+            </style>
         </head>
-        <a href="accounts/login">LOGIN</a>
-        <a href="/signup">SIGNUP</a>
+        <body>
+            <div>
+                <a href="accounts/login">LOGIN</a>
+                <a href="/signup">SIGNUP</a>
+            </div>
+        </body>
     {% endif %}
     </body>
 </html>
