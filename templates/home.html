@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    {% if user.is_authenticated %}
+    <head>
+        <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+    </head>
+    <body>
+    <nav class="basicnav">
+        <a class="link" href="{% url 'home_view'  %}">Home</a>
+        <a class="link" href="#about">About</a>
+        <a class="link dropdown" href="#">Profile</a>
+        <div class="dropdown-content">
+            <a href="{% url 'profile' request.user %}">View</a>
+            <a href="accounts/logout">Logout</a>
+        </div>
+    </nav>
+
+        <p>{{ request.user }}</p>
+
+    <div class="main">
+        <div class="user_opts">
+            <a href="{% url 'my_ideas' %}">YOUR IDEAS</a>
+            <a href="{% url 'add_idea' %}">ADD JOB</a>
+        </div>
+        <div class="ideas">
+            {% for idea in Idea %}
+                <div class="item">
+                    <h3>{{ idea.title }}</h3>
+                    <a href = "{% url 'idea_view' idea.id %}">view</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+    {% else %}
+        <head>
+            <style>
+                body {
+                    background-color: rgb(31, 114, 110);
+                    display: flex;
+                    flex-direction: row;
+                    row-gap: 20px;
+                    align-items: center;
+                    height: 100vh;
+                    justify-content: center;
+
+                }
+                a{
+                    text-decoration: none;
+                    background-color: rgb(9, 61, 58);
+                    padding: 1em 1.5em;
+                    color: white;
+                    border-radius: 15px;
+                }
+            </style>
+        </head>
+        <body>
+            <div>
+                <a href="accounts/login">LOGIN</a>
+                <a href="/signup">SIGNUP</a>
+            </div>
+        </body>
+    {% endif %}
+    </body>
+</html>

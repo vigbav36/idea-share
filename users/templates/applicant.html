@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'mainPg.css' %}">
+        <style>
+            .main {
+                height: 100vh;
+            }
+             .view {
+                border-radius: 15px;
+                width: 40%;
+                background-color: rgb(195, 233, 231);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 12px 10px 12px rgba(16, 15, 15, 0.42);
+                row-gap: 5px;
+                }
+            p {
+
+                background-color: white;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                border-radius: 15px;
+                line-height: 40px;
+            }
+            a {
+                color: rgb(12, 64, 62);
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="basicnav">
+            <a class="link" href="{% url 'home_view'  %}">Home</a>
+        </nav>
+        <div class="main">
+            <div class="view">
+                <p>Name - {{ id }}
+                <br>Description - {{ applicant.description }}
+                <br>Skills - {{ applicant.skills }}
+                <br>
+                <a href = "{% url 'profile' id %}">View Profile</a></p>
+            </div>
+        </div>
+    </body>
+</html>

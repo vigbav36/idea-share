@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'signup.css' %}">
+    </head>
+    <body>
+        <nav class="basicnav">
+            <a href="{% url 'home_view'  %}">Home</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="main">
+            <div class="login_box">
+                <h1>
+                    SIGNUP
+                </h1>
+                <form method="POST">{% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="sub_button" type="submit" value="Signup">
+                </form>
+                <h1>
+                    {% for err in form_errors %}
+                        {{ err }}
+                    {% endfor %}
+                </h1>
+            </div>
+        </div>
+    </body>
+</html>
