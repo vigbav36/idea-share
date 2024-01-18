@@ -1,3 +1,3 @@
 # Idea Share
 
-A web application that enables sharing ideas and collaboration
+A Django web application that enables sharing ideas and collaboration
